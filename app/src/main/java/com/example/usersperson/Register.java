@@ -67,7 +67,7 @@ public class Register extends AppCompatActivity {
                 mPassword.setError("Password Must be >= 6 Characters");
                 return;
             }
-
+            // загруска
             processBar.setVisibility(View.VISIBLE);
 
             // register the in firebase
@@ -84,7 +84,8 @@ public class Register extends AppCompatActivity {
                             } else {
 
                                 Toast.makeText(Register.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
+                                // отменить загруска
+                                processBar.setVisibility(View.GONE);
                             }
                         }
                     });
